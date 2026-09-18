@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amway ABO Structure Simulator</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./css/style.css?v=pf26-20260918">
+</head>
+<body>
+  <div id="alerts" class="alerts" aria-live="polite"></div>
+
+  <main class="app">
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <header class="hero">
+      <div class="hero-actions">
+        <button id="toggleUi" class="ghost">UI 숨기기</button>
+        <button id="resetScenario" class="ghost danger">초기화</button>
+        <div class="sample-control">
+          <select id="sampleSelect" aria-label="샘플 선택">
+            <option value="">샘플 선택</option>
+            <option value="bronze">Bronze 예시</option>
+            <option value="silver">Silver Producer 예시</option>
+            <option value="gold">Gold Producer 예시</option>
+            <option value="platinum">Platinum 예시</option>
+            <option value="foundersPlatinum">Founders Platinum 예시</option>
+            <option value="ruby">Ruby 예시</option>
+            <option value="foundersRuby">Founders Ruby 예시</option>
+            <option value="sapphire">Sapphire 예시</option>
+            <option value="foundersSapphire">Founders Sapphire 예시</option>
+            <option value="emerald">Emerald 예시</option>
+            <option value="foundersEmerald">Founders Emerald 예시</option>
+            <option value="diamond">Diamond 예시</option>
+            <option value="foundersDiamond">Founders Diamond 예시</option>
+            <option value="executiveDiamond">Executive Diamond 예시</option>
+            <option value="foundersExecutiveDiamond">Founders Executive Diamond 예시</option>
+            <option value="doubleDiamond">Double Diamond 예시</option>
+            <option value="foundersDoubleDiamond">Founders Double Diamond 예시</option>
+            <option value="tripleDiamond">Triple Diamond 예시</option>
+            <option value="foundersTripleDiamond">Founders Triple Diamond 예시</option>
+            <option value="crown">Crown 예시</option>
+            <option value="foundersCrown">Founders Crown 예시</option>
+            <option value="crownAmbassador">Crown Ambassador 예시</option>
+            <option value="foundersCrownAmbassador">Founders Crown Ambassador 예시</option>
+          </select>
+          <button id="applySample" class="primary">적용</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="confirmModal" class="confirm-modal" aria-hidden="true">
+      <div class="confirm-card" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <span id="confirmKicker">확인</span>
+        <strong id="confirmTitle">정말 초기화할까요?</strong>
+        <p id="confirmMessage">현재 입력한 ABO 구조가 기본값으로 돌아갑니다.</p>
+        <div class="confirm-actions">
+          <button id="cancelConfirm" class="ghost">취소</button>
+          <button id="confirmAction" class="primary">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="summary-grid">
+      <article class="summary-card hero-card">
+        <span>이번 달 예상 수당</span>
+        <strong id="netPay">0원</strong>
+        <em id="payFormula">성과보너스 0원 + 추가 보너스 0원</em>
+      </article>
+      <article class="summary-card">
+        <span>현재 핀 추정</span>
+        <strong id="currentPin">-</strong>
+        <em id="pinReason">구조 계산 중</em>
+      </article>
+      <article class="summary-card">
+        <span>실구매금액 환산</span>
+        <strong id="purchaseEstimate">0원</strong>
+        <em id="purchaseRule">제품별 PV 차이, 평균값</em>
+      </article>
+      <article class="summary-card">
+        <span>전체 BV 환산</span>
+        <strong id="totalBv">0 BV</strong>
+        <em id="bvRule">수당 계산 기준 볼륨</em>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <section class="panel simulator-panel">
+        <section id="mindMap" class="mind-map" aria-label="ABO sponsor mind map"></section>
+      </section>
+
+      <aside class="panel guide-panel">
+        <nav id="sideModeTabs" class="side-mode-tabs"></nav>
+        <section id="sideContent" class="side-content"></section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./js/compensation.js?v=pf26-20260918"></script>
+  <script src="./js/reference.js?v=pf26-20260918"></script>
+  <script src="./js/main.js?v=pf26-20260918"></script>
+</body>
+</html>
